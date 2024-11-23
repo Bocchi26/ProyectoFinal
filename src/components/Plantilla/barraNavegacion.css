@@ -1,0 +1,85 @@
+/* Contenedor principal de la barra de navegación */
+.barraNavegacion {
+    position: fixed;
+  top: 35%;
+  left: 0;
+  min-height: auto; 
+  width: 60px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-direction: column; /* Elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: space-between; /* Distribuye los elementos verticalmente */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  transition: width 0.3s;
+  z-index: 1000;
+    border-radius: 8px; /* Opcional: bordes redondeados */
+  }
+  
+  /* Cuando la barra está abierta */
+  .barraNavegacion.abrir {
+    width: 200px; /* Ancho cuando está desplegada */
+  }
+  
+  /* Botón para alternar la barra */
+  .botton-cambiar {
+    
+    margin: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+  }
+  
+  /* Navegación interna */
+  .navegacion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los elementos */
+    width: 100%; /* Ocupa el ancho completo de la barra */
+  }
+  
+  /* Estilo para cada enlace */
+  .navegacion a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+  }
+  
+  /* Iconos en los enlaces */
+  .navegacion .icon {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  
+  /* Cuando la barra está cerrada, oculta el texto */
+  .navegacion .text {
+    display: none;
+  }
+  
+  /* Cuando la barra está abierta, muestra el texto */
+  .barraNavegacion.abrir .navegacion .text {
+    display: inline;
+  }
+  
+  /* Enlace activo */
+  .navegacion a.activo {
+    background-color: #555;
+    font-weight: bold;
+  }
+  
+  /* Página principal con espacio reservado para la barra */
+  .contenidoPrincipal {
+    margin-left: 50px; /* Espacio reservado para la barra cerrada */
+    padding: 10px;
+    transition: margin-left 0.3s; /* Suaviza el cambio al abrir la barra */
+  }
+  
+  /* Ajuste al abrir la barra */
+  .barraNavegacion.abrir + .contenidoPrincipal {
+    margin-left: 200px; /* Espacio reservado para la barra abierta */
+  }
+  

@@ -1,22 +1,16 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
+import BarraNavegacion from "./barraNavegacion";
 
 const Plantilla = ({ children }) => {
   return (
-    <div style={{ backgroundColor: "#f0f0f0", minHeight: "100vh" }}>
-      <nav>
+    <div style={{ display: "flex", minHeight: "100vh" }}>
         {/* Barra de navegación */}
-        <ul>
-        <li><Link to="/">Home</Link></li>
-          <li><Link to="/calculadora">Calculadora</Link></li>
-          <li><Link to="/graficos">Gráficos</Link></li>
-        </ul>
-      </nav>
-      <main>
-        {/* Contenido específico de cada página */}
-        {children}
-      </main>
+        <BarraNavegacion />
+         {/* aqui va a ir como va a ser la plntilla */}
+      <div className="contenidoPrincipal">
+        {children} {/* Contenido específico de cada página */}
+      </div>
     </div>
   );
 };
