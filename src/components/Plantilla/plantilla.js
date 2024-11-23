@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Plantilla = ({ children }) => {
   return (
@@ -7,9 +8,9 @@ const Plantilla = ({ children }) => {
       <nav>
         {/* Barra de navegación */}
         <ul>
-          <li><a href="../Home/inicio">Home</a></li>
-          <li><a href="../Calculadora/">Calculadora</a></li>
-          <li><a href="/graficos">Gráficos</a></li>
+        <li><Link to="/">Home</Link></li>
+          <li><Link to="/calculadora">Calculadora</Link></li>
+          <li><Link to="/graficos">Gráficos</Link></li>
         </ul>
       </nav>
       <main>
