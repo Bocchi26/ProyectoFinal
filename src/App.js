@@ -7,7 +7,7 @@ import Graficos from "./components/Graficos/graficos";
 
 const App = () => {
   return (
-    <Router>
+    <Router id="sexo">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/calculadora" element={<Calculadora />} />

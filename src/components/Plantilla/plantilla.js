@@ -5,14 +5,18 @@ import "./plantilla.css"
 
 const Plantilla = ({ children }) => {
   return (
-    <div className="planti">
+    <div className="plantilla">
+      <header>
+
+      </header>
         {/* Barra de navegación */}
         <BarraNavegacion />
          {/* aqui va a ir como va a ser la plntilla */}
-      <div className="contenidoPrincipal">
 
+      <main className="contenidoPrincipal">
         {children} {/* Contenido específico de cada página */}
-      </div>
+      </main>
+      <footer>© 2024 Energías Renovables</footer>
     </div>
   );
 };
