@@ -14,6 +14,8 @@ const BarraNavegacion = () => {
         {name: "Home", path:"/", icon: "🏠"},
         {name: "Calculadora", path:"/calculadora", icon: "🧮"},
         {name: "Grafica", path:"/graficos", icon: "📊"},
+        {name: "Geotérmica", path:"/geotermica", icon: "🌍"},
+        {name: "Hechos Históricos", path:"/hechos_historicos", icon: "⏳"},
     ];
     return (
         <div className={`barraNavegacion ${abierto ? "abrir" : ""}`}>
