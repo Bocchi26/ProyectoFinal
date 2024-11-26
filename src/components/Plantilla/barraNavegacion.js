@@ -11,11 +11,9 @@ const BarraNavegacion = () => {
 
     //rutas e iconos 
     const links = [ 
-        {name: "Home", path:"/", icon: "🏠"},
-        {name: "Calculadora", path:"/calculadora", icon: "🧮"},
-        {name: "Grafica", path:"/graficos", icon: "📊"},
-        {name: "Geotérmica", path:"/geotermica", icon: "🌍"},
-        {name: "Hechos Históricos", path:"/hechos_historicos", icon: "⏳"},
+        {name: "Inicio", path:"/", icon: "🏠"},
+        {name: "Hechos \n Históricos", path:"/calculadora", icon: "🧮"},
+        {name: "Graficas", path:"/graficos", icon: "📊"},
     ];
     return (
         <div className={`barraNavegacion ${abierto ? "abrir" : ""}`}>
@@ -33,6 +31,7 @@ const BarraNavegacion = () => {
                         </NavLink> 
                 ))}
             </nav>
+           
         </div> 
     );
 };

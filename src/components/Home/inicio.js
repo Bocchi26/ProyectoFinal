@@ -1,6 +1,7 @@
 // src/components/home/Home.js
 import React from "react";
 import Plantilla from "../Plantilla/plantilla";
+import "./inicio.css"
 
 const Home = () => {
   return (

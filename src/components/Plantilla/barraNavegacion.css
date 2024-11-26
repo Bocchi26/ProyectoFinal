@@ -5,7 +5,7 @@
   left: 0;
   min-height: auto; 
   width: 60px;
-  background-color: #333;
+  background-color: #238f27;
   color: white;
   display: flex;
   flex-direction: column; /* Elementos en columna */
@@ -20,6 +20,7 @@
   /* Cuando la barra está abierta */
   .barraNavegacion.abrir {
     width: 200px; /* Ancho cuando está desplegada */
+    white-space: pre;
   }
   
   /* Botón para alternar la barra */
@@ -67,7 +68,7 @@
   
   /* Enlace activo */
   .navegacion a.activo {
-    background-color: #555;
+    background-color: #71d458;
     font-weight: bold;
     border-radius: 8px;
   }
