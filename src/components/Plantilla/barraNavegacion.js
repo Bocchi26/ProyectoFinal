@@ -11,8 +11,8 @@ const BarraNavegacion = () => {
 
     //rutas e iconos 
     const links = [ 
-        {name: "Inicio", path:"/", icon: "🏠"},
-        {name: "Hechos \n Históricos", path:"/calculadora", icon: "🧮"},
+        {name: "Inicio", path:"/", icon: "🌎"},
+        {name: "Hechos \n Históricos", path:"/historia", icon: "🕰️"},
         {name: "Graficas", path:"/graficos", icon: "📊"},
     ];
     return (

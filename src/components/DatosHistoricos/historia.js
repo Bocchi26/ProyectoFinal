@@ -1,7 +1,7 @@
 import React from "react";
 import Plantilla from "../Plantilla/plantilla";
 
-const Calculadora = () => {
+const datosHistoricos = () => {
   return (
     <Plantilla>
       <h1>Bienvenido a la Página de la calculadora</h1>
@@ -10,4 +10,4 @@ const Calculadora = () => {
   );
 };
 
-export default Calculadora;
+export default datosHistoricos;
