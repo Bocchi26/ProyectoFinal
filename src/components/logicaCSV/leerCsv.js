@@ -1,6 +1,6 @@
 async function cargarCSV() {
     try {
-        const respuestas = await fetch("./Libro1.csv"); // Cargar el archivo CSV
+        const respuestas = await fetch("/public/archivosCSV/02 modern-renewable-energy-consumption.csv"); // Cargar el archivo CSV
         const texto = await respuestas.text(); // Leer el contenido como texto
 
         const lineas = texto.split("\n").map(linea => linea.trim()); // Dividir el contenido por líneas y limpiar espacios
