@@ -32,7 +32,7 @@ const Home = () => {
             <p>afasldjfsalfjasldfjlasdjflasjdlfjasdlfkjasldfkjasldkfjalsdfjalsdfjalsdfjalsdkfjasldfjas</p>
           </section>
       </div>
-
+      <h2>Gestion de las tablas que rico</h2>
       
 
     </Plantilla>

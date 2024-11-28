@@ -1,20 +1,23 @@
 /* Contenedor principal de la barra de navegación */
 .barraNavegacion {
-    position: fixed;
-  top: 35%;
+  position: fixed;
+  top: 85px;
   left: 0;
-  min-height: auto; 
+  
+
+  min-height:100%; 
+  margin: 0 auto;
   width: 60px;
-  background-color: #238f27;
+  background-color:  #99d347;
   color: white;
   display: flex;
   flex-direction: column; /* Elementos en columna */
-  align-items: center; /* Centra horizontalmente */
-  justify-content: space-between; /* Distribuye los elementos verticalmente */
+  align-items: center ; /* Centra horizontalmente */
+  justify-content:flex-start; /* Distribuye los elementos verticalmente */
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
   transition: width 0.3s;
   z-index: 1000;
-    border-radius: 8px; /* Opcional: bordes redondeados */
+  border-radius: 8px; /* Opcional: bordes redondeados */
   }
   
   /* Cuando la barra está abierta */
@@ -25,7 +28,7 @@
   
   /* Botón para alternar la barra */
   .botton-cambiar {
-    
+    top: 0;
     margin: 10px;
     cursor: pointer;
     font-size: 24px;
@@ -54,6 +57,7 @@
   .navegacion .icon {
     margin-right: 10px;
     font-size: 20px;
+
   }
   
   /* Cuando la barra está cerrada, oculta el texto */
@@ -68,7 +72,7 @@
   
   /* Enlace activo */
   .navegacion a.activo {
-    background-color: #71d458;
+    background-color: #196906;
     font-weight: bold;
     border-radius: 8px;
   }

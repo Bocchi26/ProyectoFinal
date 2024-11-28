@@ -21,6 +21,8 @@
     border-radius: 10px;  /*Para darle bordeado redondo*/
     /*line-height: 50px;  es el espacio entre lineas*/
     transition: transform 0.3s ease; /* Animación suave */
+    position: relative;
+    overflow: hidden;
 }
 /*Es la animación del hover, que se agranda al pasar el mouse*/
 .Seccion1:hover{
@@ -68,6 +70,8 @@
     box-shadow: 5px 5px 15px rgba(29, 202, 17, 0.4);
     border-radius: 10px;
     transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 .Seccion3:hover{
     transform: scale(1.1); /* Aumenta el tamaño al 110% */
@@ -82,6 +86,8 @@
     box-shadow: 10px 10px 5px rgba(206, 34, 178, 0.3);
     border-radius: 10px;
     transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 .Seccion4:hover{
     transform: scale(1.1); /* Aumenta el tamaño al 110% */

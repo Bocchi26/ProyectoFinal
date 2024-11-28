@@ -19,8 +19,9 @@ const Plantilla = ({ children }) => {
 
       <main className="contenidoPrincipal">
         {children} {/* Contenido específico de cada página */}
+        <footer id="Piedepagina">© 2024 Energías Renovables</footer>
       </main>
-      <footer id="Piedepagina">© 2024 Energías Renovables</footer>
+     
     </div>
   );
 };
