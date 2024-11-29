@@ -1,6 +1,14 @@
 async function cargarCSV() {
     try {
+<<<<<<< HEAD
         const respuestas = await fetch("/public/archivosCSV/02 modern-renewable-energy-consumption.csv"); // Cargar el archivo CSV
+        console.log("Versión local y remota");
+
+=======
+        const respuestas = await fetch(""); // Cargar el archivo CSV
+        console.log("Versión local y remota");
+
+>>>>>>> e46594679211d5f8389ebfb63b75ad96b431a4f3
         const texto = await respuestas.text(); // Leer el contenido como texto
 
         const lineas = texto.split("\n").map(linea => linea.trim()); // Dividir el contenido por líneas y limpiar espacios

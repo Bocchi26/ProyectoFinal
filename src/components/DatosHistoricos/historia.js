@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Plantilla from "../Plantilla/plantilla";
 
+<<<<<<< HEAD
 const Calculadora = () => {
   useEffect(() => {
     const cargarCSV = async () => {
@@ -36,7 +37,13 @@ const Calculadora = () => {
 
     cargarCSV();
   }, []); // Se ejecuta solo una vez cuando se monta el componente
+  console.log("Versión local y remota");
 
+=======
+const datosHistoricos = () => {
+  console.log("Versión local y remota");
+
+>>>>>>> e46594679211d5f8389ebfb63b75ad96b431a4f3
   return (
     <Plantilla>
       <h1>Bienvenido a la Página de la Calculadora</h1>
@@ -64,4 +71,8 @@ const Calculadora = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Calculadora;
+=======
+export default datosHistoricos;
+>>>>>>> e46594679211d5f8389ebfb63b75ad96b431a4f3
