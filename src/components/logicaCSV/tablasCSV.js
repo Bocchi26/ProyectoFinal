@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState, useMemo } from "react";
 import { useTable} from "react-table";
 import "./tablasCSV.css"
@@ -8,7 +6,8 @@ const TabularCSV = () => {
   const [datos, setDatos] = useState([]); // Estado para almacenar los datos procesados del CSV
   const [filtros, setFiltros] = useState({ entity: "", year: "" }); // Filtros iniciales
   const [filtrosAplicados, setFiltrosAplicados] = useState({ entity: "Colombia", year: "2021" }); // Filtros aplicados
-
+  const [opcionesPais, setOpcionesPais] = useState([]);
+  const [opcionesYear, setOpcionesYear] = useState([]);
   // Cargar el archivo CSV al montar el componente
   useEffect(() => {
     const cargarCSV = async () => {
@@ -31,6 +30,12 @@ const TabularCSV = () => {
           });
 
         setDatos(datosProcesados); // Guardar los datos procesados en el estado
+         // Extraer opciones únicas para país y año
+         const paisesUnicos = [...new Set(datosProcesados.map((dato) => dato.Entity).filter(Boolean))];
+         const añosUnicos = [...new Set(datosProcesados.map((dato) => dato.Year).filter(Boolean))].sort();
+ 
+         setOpcionesPais(paisesUnicos);
+         setOpcionesYear(añosUnicos);
       } catch (error) {
         console.error("Error al cargar el archivo CSV: ", error);
       }
@@ -42,10 +47,10 @@ const TabularCSV = () => {
   // Filtrar datos solo cuando los filtros sean aplicados
   const datosFiltrados = useMemo(() => {
     return datos.filter((dato) => {
-      const entityNormalizado = filtrosAplicados.entity.trim().toLowerCase();
-      const yearNormalizado = filtrosAplicados.year.trim();
-      const coincideEntity = !entityNormalizado || dato.Entity?.trim().toLowerCase() === entityNormalizado;
-      const coincideYear = !yearNormalizado || dato.Year?.trim() === yearNormalizado;
+      let entityNormalizado = filtrosAplicados.entity.trim().toLowerCase();
+      let yearNormalizado = filtrosAplicados.year.trim();
+      let coincideEntity = !entityNormalizado || dato.Entity?.trim().toLowerCase() === entityNormalizado;
+      let coincideYear = !yearNormalizado || dato.Year?.trim() === yearNormalizado;
       return coincideEntity && coincideYear;
     });
   }, [datos, filtrosAplicados]); // Recalcular solo cuando cambien `datos` o `filtrosAplicados`
@@ -69,48 +74,52 @@ const TabularCSV = () => {
     columns: columnas,
     data: datosFiltrados,
   });
+  let mostrarMensaje = !filtrosAplicados.entity.trim() && !filtrosAplicados.year.trim();
 
   return (
     <article>
-      <h1>Datos Históricos</h1>
-
-      
-      <div style={{ marginBottom: "20px" }}>
-        <label>
-          <strong>Filtrar por País: </strong>
-          <input
-            type="text"
-            value={filtros.entity} // Enlazar el valor al estado
-            onChange={(e) =>
-              setFiltros({ ...filtros, entity: e.target.value.toLowerCase() }) // Normalizar el filtro de país
-            }
-            placeholder="Escribe un país (ej. Colombia)"
-          />
-        </label>
-        <label style={{ marginLeft: "10px" }}>
-          <strong>Filtrar por Año: </strong>
-          <input
-            type="text"
-            value={filtros.year} // Enlazar el valor al estado
-            onChange={(e) => setFiltros({ ...filtros, year: e.target.value.trim() })} // Normalizar el filtro de año
-            placeholder="Escribe un año (ej. 2021)"
-          />
-        </label>
-        <button
-          onClick={() => setFiltrosAplicados({ ...filtros })} // Aplicar los filtros al hacer clic
-          style={{ marginLeft: "10px", padding: "5px 10px", cursor: "pointer" }}
+      <div>
+      <label>
+        País:
+        <select
+          value={filtros.entity}
+          onChange={(e) => setFiltros({ ...filtros, entity: e.target.value })}
         >
-          Filtrar
-        </button>
+          <option value="">Seleccione un país</option>
+          {opcionesPais.map((pais, index) => (
+            <option key={index} value={pais}>
+              {pais}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label>
+        Año:
+        <select
+          value={filtros.year}
+          onChange={(e) => setFiltros({ ...filtros, year: e.target.value })}
+        >
+          <option value="">Seleccione un año</option>
+          {opcionesYear.map((year, index) => (
+            <option key={index} value={year}>
+              {year}
+            </option>
+          ))}
+        </select>
+      </label>
+      <button onClick={() => setFiltrosAplicados({ ...filtros })}>Filtrar</button>
       </div>
 
-     
-      <table {...getTableProps()} border="1" style={{ width: "100%", borderCollapse: "collapse" }}>
+      {mostrarMensaje || datosFiltrados.length === 0 ? (
+        <p className="mensajes">No se encontraron datos</p>
+      ) : (
+        <div>
+        <table {...getTableProps()}id="tabalPincipal" >
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()} style={{ padding: "8px", background: "#f0f0f0" }}>
+                <th {...column.getHeaderProps()}id="cabezeraTabla">
                   {column.render("Header")}
                 </th>
               ))}
@@ -124,7 +133,7 @@ const TabularCSV = () => {
               return (
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => (
-                    <td {...cell.getCellProps()} style={{ padding: "8px", textAlign: "center" }}>
+                    <td {...cell.getCellProps()} id="cuerpoTabla">
                       {cell.render("Cell")}
                     </td>
                   ))}
@@ -134,15 +143,17 @@ const TabularCSV = () => {
           ) : (
             // Mostrar mensaje si no hay datos
             <tr>
-              <td colSpan={columnas.length} style={{ textAlign: "center", padding: "8px" }}>
+              <td colSpan={columnas.length} className="mesajes">
                 No se encontraron resultados.
               </td>
             </tr>
           )}
         </tbody>
       </table>
+      </div>
+      )}
     </article>
-);
+  );
 };
 
 export default TabularCSV;
