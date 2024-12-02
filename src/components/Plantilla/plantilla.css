@@ -21,15 +21,13 @@
     position: sticky;
     display: flex;
     align-items: center; /* Alinea el contenido verticalmente */ 
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Agrega un efecto de sombra */
     top: 0; /* Ubicación en la parte superior */
-    left: 0; /* Alineado al borde izquierdo */
+    left:   0; /* Alineado al borde izquierdo */
     width: 100%; /* Para que ocupe todo el ancho */
     z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-    background: linear-gradient(to bottom, #99d347 40%, #ffffff 80%); /* Más verde al inicio */
+    background: linear-gradient(to bottom, #3c3c3c 40%, #849085 80%); /* Verde a Marrón */
 
 
-        
     }
 
     /*Esta es la animación del encabezado*/
@@ -37,12 +35,12 @@
         0% { opacity: 1; }
         50% { opacity: 0.5; }
         100% { opacity: 1; }
-      }
+    }
     /*Aquí se modifica el encabezado:*/
     #texto-encabezado{
         font-family: 'Times New Roman', Times, serif;
-        color: #086823;
-        text-shadow: 0 0 5px hsl(118, 92%, 24%), 0 0 10px #276795;
+        color: #efefef;
+        text-shadow: 0 0 5px hsl(123, 100%, 46%), 0 0 10px #00fa1d;
         animation: flicker 1s infinite alternate;
         font-size: 30px ;
         margin-left: 20px;
@@ -69,8 +67,7 @@
     /*Aquí se manejan los efectos de inicio*/
     .contenidoPrincipal {
         flex: 1; /* Hace que esta sección crezca y ocupe el espacio restante */
-        padding: 20px;
-        overflow-y: auto; /* Para que el contenido largo tenga scroll */
+        padding: 0px;
         background-color: #ffffff; /* Fondo de la sección principal */
        
       

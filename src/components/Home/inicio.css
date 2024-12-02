@@ -1,94 +1,71 @@
 
 #Titulo{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    text-align: center;
+    color:white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /*Se le pone sombra gris al texto*/
+    font-size: 50px;
+    
+}
+
+
+
+#primerTexto{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color:white;
+    font-size: 22px;
+    padding: 0px 300px 0px 300px; /* Arriba, derecha, abajo, izquierda */
+    
+}
+
+
+#SubTitulo{
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /*Se le pone sombra gris al texto*/
-
+    font-size: 30px;
+    margin: 600px;
+    
 }
+
 /*Aquí se modifican las secciones de inicio----------------------------------------------------*/
 .Secciones{
     display: flex;
     margin-left: 30px;
 }
 
-.Seccion1{
-    background-color: coral;
-    width: 600px;
-    height: 200px;     
-    margin-top: 30px;
-    margin-left: 0px;
-    box-shadow: 10px 10px 5px rgba(247, 11, 11, 0.3); /* Sombra las cajas suave */
-    border-radius: 10px;  /*Para darle bordeado redondo*/
-    /*line-height: 50px;  es el espacio entre lineas*/
-    transition: transform 0.3s ease; /* Animación suave */
-    position: relative;
-    overflow: hidden;
+
+
+/* Estilo para el fondo */
+.contenedor-fondo {
+    background-image: url("https://www.enelgreenpower.com/content/dam/enel-egp/immagini/learning-hub/energia-geotermica/Hero_Image-energia-geotermica.jpg.resize.2880.2000.center.center@2x.jpeg");
+    width: 100%;                /* El ancho ocupa todo el contenedor */
+    height: 120vh;              /* La altura ocupa todo el alto de la pantalla */
+    background-size: cover;     /* La imagen cubre todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
 }
-/*Es la animación del hover, que se agranda al pasar el mouse*/
-.Seccion1:hover{
-    transform: scale(1.1); /* Aumenta el tamaño al 110% */
+
+html {
+    scroll-behavior: smooth;  /* Esto hace que el desplazamiento sea suave */
+}
+
+.links {
+    position: fixed;
+    bottom: 0; /* Los coloca en la parte inferior */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    text-align: center;
+}
+
+.links a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
 }
 
 
-.Seccion2{
-    background-color: rgb(96, 155, 228);
-    width: 600px;
-    height: 200px;     
-    margin-top: 100px;
-    margin-left: 90px;
-    box-shadow: 10px 10px 5px rgba(41, 67, 234, 0.3);
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-}
-.Seccion2:hover{
-    animation: girar 0.5s ease forwards;
-}
-@keyframes girar {
-    0% {
-      transform: rotate(0);
-    }
-    100% {
-      transform: rotate(15deg);
-    }
-  }
-
-
-.Secciones2{
-    display: flex;
-    margin-left: 30px;
-}
-
-
-.Seccion3{
-    background-color: rgb(162, 238, 76);
-    width: 580px;
-    height: 200px;     
-    margin-top: -20px;
-    margin-left: 0px;
-    border: 1px solid #0e0d0d;  /*Para darle bordeado a la caja*/
-    box-shadow: 5px 5px 15px rgba(29, 202, 17, 0.4);
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-.Seccion3:hover{
-    transform: scale(1.1); /* Aumenta el tamaño al 110% */
-}
-
-.Seccion4{
-    background-color: rgb(238, 76, 211);
-    width: 580px;
-    height: 200px;     
-    margin-top: 50px;
-    margin-left: 90px;
-    box-shadow: 10px 10px 5px rgba(206, 34, 178, 0.3);
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-.Seccion4:hover{
-    transform: scale(1.1); /* Aumenta el tamaño al 110% */
-}
+ 

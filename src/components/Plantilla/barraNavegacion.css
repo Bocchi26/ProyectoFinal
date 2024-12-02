@@ -1,14 +1,14 @@
 /* Contenedor principal de la barra de navegación */
 .barraNavegacion {
   position: fixed;
-  top: 85px;
+  top: 80px;
   left: 0;
   
 
   min-height:100%; 
   margin: 0 auto;
-  width: 60px;
-  background-color:  #99d347;
+  width: 48px;
+  background-color:  #2c2c2c;
   color: white;
   display: flex;
   flex-direction: column; /* Elementos en columna */
@@ -72,7 +72,7 @@
   
   /* Enlace activo */
   .navegacion a.activo {
-    background-color: #196906;
+    background-color: #376c33;
     font-weight: bold;
     border-radius: 8px;
   }
