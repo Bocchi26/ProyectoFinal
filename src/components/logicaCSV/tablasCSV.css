@@ -1,81 +1,88 @@
 /* Contenedor de la tabla */
 div > #tabalPincipal {
-    max-height: 400px; /* Altura fija para la tabla */
-    overflow-y: auto; /* Habilita solo el scroll vertical */
-    display: block;
-  }
-  
-  /* Tabla */
-  #tabalPincipal {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Cabecera fija */
-  #tabalPincipal thead {
-    display: table;
-    width: 100%;
-    table-layout: fixed; /* Mantiene proporción de las columnas */
-    position: sticky;
-    top: 0;
-    z-index: 2; /* Asegura que la cabecera esté por encima del cuerpo */
-    background-color: #0078d7;
-    color: #ffffff;
-  }
-  
-  /* Estilo para celdas de cabecera */
-  #cabezeraTabla {
-    padding: 15px;
-    text-align: left;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #cccccc;
-  }
-  
-  /* Cuerpo de la tabla */
-  #tabalPincipal tbody {
-    display: block;
-    overflow-y: auto; /* Habilita solo scroll vertical */
-    width: 100%;
-  }
-  
-  #tabalPincipal tbody tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-  }
-  
-  /* Estilo para celdas del cuerpo */
-  #cuerpoTabla {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #e0e0e0;
-    word-wrap: break-word;
-  }
-  
-  /* Alternar colores de filas */
-  #tabalPincipal tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  #tabalPincipal tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-  }
-  
-  /* Efecto hover en las filas */
-  #tabalPincipal tbody tr:hover {
-    background-color: #f1f7ff;
-  }
-  
-  /* Mensajes */
-  .mensajes {
-    font-size: 16px;
-    color: #ff0000;
-    text-align: center;
-    margin-top: 20px;
-    font-weight: bold;
-  }
-  
+  max-height: 250px; /* Altura fija para la tabla */
+  overflow-y: auto; /* Habilita solo el scroll vertical */
+  display: block;
+}
+
+/* Tabla */
+#tabalPincipal {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  box-shadow: 0 4px 8px rgb(0, 255, 21);
+}
+
+/* Cabecera fija */
+#tabalPincipal thead {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* Mantiene proporción de las columnas */
+  position: sticky;
+  top: 0;
+  z-index: 2; /* Asegura que la cabecera esté por encima del cuerpo */
+  background-color: #3bd640; /* Verde claro para la cabecera */
+  color: #063600; /* Texto verde oscuro */
+}
+
+/* Estilo para celdas de cabecera */
+#cabezeraTabla {
+  padding: 15px;
+  text-align: center; /* Centrado del texto */
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/* Cuerpo de la tabla */
+#tabalPincipal tbody {
+  display: block;
+  overflow-y: auto; /* Habilita solo scroll vertical */
+  width: 100%;
+}
+
+#tabalPincipal tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Estilo para celdas del cuerpo */
+#cuerpoTabla {
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #000000;
+  word-wrap: break-word;
+  text-align: center; /* Centrado del texto */
+}
+
+/* Alternar colores de filas */
+#tabalPincipal tbody tr:nth-child(odd) {
+  background-color: #b5ffb1; /* Verde claro */
+}
+
+#tabalPincipal tbody tr:nth-child(even) {
+  background-color: #ffffff; /* Blanco */
+}
+
+/* Cambio de color en filas al pasar el cursor */
+#tabalPincipal tbody tr:hover {
+  background-color: #007515; /* Verde más oscuro */
+  color: #ffffff; /* Letras blancas */
+  cursor: pointer; /* Cambia el puntero al pasar el mouse */
+}
+
+/* Cambio de color de las celdas al pasar el cursor */
+#tabalPincipal tbody tr:hover td {
+  color: #ffffff; /* Letras de las celdas a blanco */
+}
+
+/* Mensajes */
+.mensajes {
+  font-size: 16px;
+  color: #ff5e57;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}

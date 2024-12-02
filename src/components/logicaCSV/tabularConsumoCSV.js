@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from "react";
 import { useTable} from "react-table";
 import "./tablasCSV.css"
 
-const TabularCSV = () => {
+const TabularConsumoCSV = () => {
   const [datos, setDatos] = useState([]); // Estado para almacenar los datos procesados del CSV
   const [filtros, setFiltros] = useState({ entity: "", year: "" }); // Filtros iniciales
   const [filtrosAplicados, setFiltrosAplicados] = useState({ entity: "Colombia", year: "2021" }); // Filtros aplicados
@@ -31,11 +31,11 @@ const TabularCSV = () => {
 
         setDatos(datosProcesados); // Guardar los datos procesados en el estado
          // Extraer opciones únicas para país y año
-         const paisesUnicos = [...new Set(datosProcesados.map((dato) => dato.Entity).filter(Boolean))];
-         const añosUnicos = [...new Set(datosProcesados.map((dato) => dato.Year).filter(Boolean))].sort();
+        const paisesUnicos = [...new Set(datosProcesados.map((dato) => dato.Entity).filter(Boolean))];
+        const añosUnicos = [...new Set(datosProcesados.map((dato) => dato.Year).filter(Boolean))].sort();
  
-         setOpcionesPais(paisesUnicos);
-         setOpcionesYear(añosUnicos);
+        setOpcionesPais(paisesUnicos);
+        setOpcionesYear(añosUnicos);
       } catch (error) {
         console.error("Error al cargar el archivo CSV: ", error);
       }
@@ -59,12 +59,12 @@ const TabularCSV = () => {
   const columnas = useMemo(
     () => [
       { Header: "Pais", accessor: "Entity" },
-      { Header: "Code", accessor: "Code" },
-      { Header: "Year", accessor: "Year" },
-      { Header: "Geo Biomass Other - TWh", accessor: "Geo Biomass Other - TWh" },
-      { Header: "Solar Generation - TWh", accessor: "Solar Generation - TWh" },
-      { Header: "Wind Generation - TWh", accessor: "Wind Generation - TWh" },
-      { Header: "Hydro Generation - TWh", accessor: "Hydro Generation - TWh" },
+      { Header: "CODIGO", accessor: "Code" },
+      { Header: "AÑO", accessor: "Year" },
+      { Header: "GEOTERMICA (TWh)", accessor: "Geo Biomass Other - TWh" },
+      { Header: "ENERGIA SOLAR (TWh)", accessor: "Solar Generation - TWh" },
+      { Header: "ENERGIA EOLICA (TWh)", accessor: "Wind Generation - TWh" },
+      { Header: "ENERGIA HIDRAULICA (TWh)", accessor: "Hydro Generation - TWh" },
     ],
     []
   );
@@ -156,4 +156,4 @@ const TabularCSV = () => {
   );
 };
 
-export default TabularCSV;
+export default TabularConsumoCSV;
