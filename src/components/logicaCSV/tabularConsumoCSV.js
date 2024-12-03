@@ -78,37 +78,56 @@ const TabularConsumoCSV = () => {
 
   return (
     <article>
-      <div>
-      <label>
-        País:
-        <select
-          value={filtros.entity}
-          onChange={(e) => setFiltros({ ...filtros, entity: e.target.value })}
-        >
-          <option value="">Seleccione un país</option>
-          {opcionesPais.map((pais, index) => (
-            <option key={index} value={pais}>
-              {pais}
-            </option>
-          ))}
-        </select>
-      </label>
-      <label>
-        Año:
-        <select
-          value={filtros.year}
-          onChange={(e) => setFiltros({ ...filtros, year: e.target.value })}
-        >
-          <option value="">Seleccione un año</option>
-          {opcionesYear.map((year, index) => (
-            <option key={index} value={year}>
-              {year}
-            </option>
-          ))}
-        </select>
-      </label>
-      <button onClick={() => setFiltrosAplicados({ ...filtros })}>Filtrar</button>
-      </div>
+ 
+
+
+ <div id="primer-selector" className="filtros-container">
+  <div className="filtro">
+    <label htmlFor="pais" className="filtro-label">
+      País:
+    </label>
+    <select
+      id="pais"
+      value={filtros.entity}
+      onChange={(e) => setFiltros({ ...filtros, entity: e.target.value })}
+      className="filtro-select"
+    >
+      <option value="">Seleccione un país</option>
+      {opcionesPais.map((pais, index) => (
+        <option key={index} value={pais}>
+          {pais}
+        </option>
+      ))}
+    </select>
+  </div>
+  <div className="filtro">
+    <label htmlFor="año" className="filtro-label">
+      Año:
+    </label>
+    <select
+      id="año"
+      value={filtros.year}
+      onChange={(e) => setFiltros({ ...filtros, year: e.target.value })}
+      className="filtro-select"
+    >
+      <option value="">Seleccione un año</option>
+      {opcionesYear.map((year, index) => (
+        <option key={index} value={year}>
+          {year}
+        </option>
+      ))}
+    </select>
+  </div>
+  <button
+    onClick={() => setFiltrosAplicados({ ...filtros })}
+    className="btn-filtrar"
+  >
+    Filtrar
+  </button>
+</div>
+
+
+
 
       {mostrarMensaje || datosFiltrados.length === 0 ? (
         <p className="mensajes">No se encontraron datos</p>

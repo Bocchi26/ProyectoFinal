@@ -41,9 +41,20 @@
 .contenedor-fondo {
     background-image: url("https://www.enelgreenpower.com/content/dam/enel-egp/immagini/learning-hub/energia-geotermica/Hero_Image-energia-geotermica.jpg.resize.2880.2000.center.center@2x.jpeg");
     width: 100%;                /* El ancho ocupa todo el contenedor */
-    height: 120vh;              /* La altura ocupa todo el alto de la pantalla */
+    height: 110vh;              /* La altura ocupa todo el alto de la pantalla */
     background-size: cover;     /* La imagen cubre todo el fondo */
     background-position: center; /* Centra la imagen en el fondo */
+    position: relative;
+}
+
+.contenedor-fondo::after {
+    content: "";                /* Crea un pseudo-elemento vacío */
+    display: block;             /* Asegura que sea visible */
+    width: 100%;                /* Ocupa todo el ancho del contenedor */
+    height: 10px;                /* Grosor de la línea */
+    background-color: #ff0000;  /* Color de la línea (puedes cambiarlo) */
+    position: absolute;         /* Posiciona relativo al contenedor */
+    bottom: 0;                  /* Coloca la línea en la parte inferior */
 }
 
 html {
@@ -52,7 +63,7 @@ html {
 
 .links {
     position: fixed;
-    bottom: 0; /* Los coloca en la parte inferior */
+    bottom: 0;  
     left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);

@@ -7,7 +7,7 @@ const Home = () => {
     <Plantilla>
       <div className="contenedor-fondo">
 
-      <div className="links">
+    <div className="links">
   <a href="#SubTitulo">¿Qué es?</a>
   <a href="#xxxx">xzxzxz</a>
   <a href="#xxxx">xzxzxxz</a>
