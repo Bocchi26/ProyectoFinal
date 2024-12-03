@@ -11,6 +11,12 @@ const Plantilla = ({ children }) => {
         <img src= "https://i.ibb.co/6F1z6ms/Captura-de-pantalla-2024-11-23-184323-removebg-preview.png" alt=" " id="logo"/> 
         <h2 id="texto-encabezado">GeoTech</h2>
 
+        <div className="links">
+            <a href="#SubTitulo">¿Qué es?</a>
+            <a href="#subTitulo2">Beneficios</a>
+            <a href="#titulosecciones">Aplicación</a>
+        </div>
+
       </header>
       
         {/* Barra de navegación */}
@@ -19,14 +25,11 @@ const Plantilla = ({ children }) => {
 
       <main className="contenidoPrincipal">
         {children} {/* Contenido específico de cada página */}
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <footer id="Piedepagina">© 2024 Energías Renovables</footer>
+        
       </main>
       
     </div>
+    
     
   );
 };
