@@ -18,7 +18,7 @@
     }
 
     #Encabezado {
-    position: sticky;
+    position:fixed;
     display: flex;
     align-items: center; /* Alinea el contenido verticalmente */ 
     top: 0; /* Ubicación en la parte superior */
@@ -27,7 +27,23 @@
     z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
     background: linear-gradient(to bottom, #3c3c3c 40%, #849085 80%); /* Verde a Marrón */
 
+    }
 
+    .links {
+        margin-left: 600px;
+        float: right;
+        bottom: 0; /* Los coloca en la parte inferior */
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .links a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
     }
 
     /*Esta es la animación del encabezado*/
@@ -56,24 +72,23 @@
     .plantilla {
     
     display: flex;
-    flex-direction: column; /* Asegura que los hijos se coloquen en columnas */
-
+    flex-direction: column; /* Asegura que los hijos se coloquen en columnas */ 
     min-height: 100vh; /* Garantiza que ocupe la altura completa de la pantalla */
-    background-color: #ffffff;
-   
-    
+    background-color: #797979;
+
     }
 
     /*Aquí se manejan los efectos de inicio*/
     .contenidoPrincipal {
         flex: 1; /* Hace que esta sección crezca y ocupe el espacio restante */
         padding: 0px;
-        background-color: #ffffff; /* Fondo de la sección principal */
-       
-      
     }
 
-
-
-
-    
+/* Pie de página */
+#Piedepagina {
+    text-align: center;      /* Centra el texto */
+    background-color: #797979; /* Color de fondo del pie de página (puedes personalizarlo) */
+    color: white;            /* Color del texto */
+    padding: 10px;           /* Espaciado interno */
+    font-size: 14px;         /* Tamaño del texto */
+    }

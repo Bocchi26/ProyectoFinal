@@ -1,44 +1,42 @@
-/* Contenedor de la tabla */
-div > #tabalPincipal {
-  max-height: 250px; /* Altura fija para la tabla */
-  overflow-y: auto; /* Habilita solo el scroll vertical */
-  display: block;
+
+
+.error-message {
+  color: #ff0d00;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
-/* Tabla */
+
+
+/* Aquí estamos asegurando el espacio entre las tablas */
 #tabalPincipal {
   width: 100%;
   border-collapse: collapse;
   margin-top: 30px;
-  box-shadow: 0 4px 8px rgb(0, 255, 21);
+  margin-bottom: 60px; /* Espacio debajo de la tabla */
+
 }
 
-/* Cabecera fija */
 #tabalPincipal thead {
   display: table;
   width: 100%;
-  table-layout: fixed; /* Mantiene proporción de las columnas */
+  table-layout: fixed;
   position: sticky;
-  top: 0;
-  z-index: 2; /* Asegura que la cabecera esté por encima del cuerpo */
-  background-color: #3bd640; /* Verde claro para la cabecera */
-  color: #063600; /* Texto verde oscuro */
+  background-color: #3bd640;
+  color: #135e09;
 }
 
-/* Estilo para celdas de cabecera */
 #cabezeraTabla {
   padding: 15px;
-  text-align: center; /* Centrado del texto */
+  text-align: center;
   font-size: 14px;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: bold;
+
 }
 
-/* Cuerpo de la tabla */
 #tabalPincipal tbody {
   display: block;
-  overflow-y: auto; /* Habilita solo scroll vertical */
   width: 100%;
 }
 
@@ -48,41 +46,251 @@ div > #tabalPincipal {
   table-layout: fixed;
 }
 
-/* Estilo para celdas del cuerpo */
-#cuerpoTabla {
+#cuerpoTabla {  /*Modificar los bordes de las celdas y etc*/
   padding: 12px;
   font-size: 14px;
-  border: 1px solid #000000;
+  border: 1px solid #000;
   word-wrap: break-word;
-  text-align: center; /* Centrado del texto */
-}
-
-/* Alternar colores de filas */
-#tabalPincipal tbody tr:nth-child(odd) {
-  background-color: #b5ffb1; /* Verde claro */
-}
-
-#tabalPincipal tbody tr:nth-child(even) {
-  background-color: #ffffff; /* Blanco */
-}
-
-/* Cambio de color en filas al pasar el cursor */
-#tabalPincipal tbody tr:hover {
-  background-color: #007515; /* Verde más oscuro */
-  color: #ffffff; /* Letras blancas */
-  cursor: pointer; /* Cambia el puntero al pasar el mouse */
-}
-
-/* Cambio de color de las celdas al pasar el cursor */
-#tabalPincipal tbody tr:hover td {
-  color: #ffffff; /* Letras de las celdas a blanco */
-}
-
-/* Mensajes */
-.mensajes {
-  font-size: 16px;
-  color: #ff5e57;
   text-align: center;
-  margin-top: 20px;
-  font-weight: bold;
 }
+
+#tabalPincipal tbody tr:nth-child(odd) {/*Ponerle color primario a las celdas*/
+  background-color: #b5ffb1;
+  width: 100%;
+
+}
+
+#tabalPincipal tbody tr:nth-child(even) { /*Ponerle color secundario a las celdas*/
+  background-color: #fff;
+}
+
+#tabalPincipal tbody tr:hover {/*Al momento de pasar el mouse por encima, que la celda cambie de color*/
+  background-color: #007515;
+  cursor: pointer;
+}
+
+#tabalPincipal tbody tr:hover td { /*Al momento de pasar el mouse por encima, que la letra cambie de color*/
+  color: #fff;
+}
+
+
+#pais{
+  color:rgb(0, 0, 0);
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#año{
+  color:rgb(0, 0, 0);
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#primer-selector{
+  text-align: center;
+}
+
+#pais2{
+  color:rgb(0, 0, 0);
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#año2{
+  color:rgb(0, 0, 0);
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#segundo-selector{
+  text-align: center;
+}
+
+/* Tabla de la calculadora */
+
+
+/* Contenedor principal */
+.calculadora-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 50px;
+  font-family: Arial, sans-serif;
+}
+
+
+#subTitulo3 { /* Titulo */
+  text-align: center; 
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.formulario-container label {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.formulario-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.formulario-container input {
+  padding: 8px;
+  font-size: 16px;
+  width: 60%;
+  margin-bottom: 20px;
+  border-radius: 500px;
+  border: 1px solid #ccc;
+}
+
+.resultados-container h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fa0000;
+}
+
+
+.resultados-container {
+  text-align: center;
+}
+
+
+.calcular-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.calcular-btn:hover {
+  background-color: #116f16;
+  transition: background-color 0.5s;
+}
+
+
+.tabla-resultados {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 30px; /* Espacio debajo de la tabla */
+  border-collapse: collapse;
+}
+
+.tabla-resultados th,
+.tabla-resultados td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #000000;
+}
+
+.tabla-resultados th {
+  background-color: #48b54c;
+  color: rgb(0, 0, 0);
+}
+
+.tabla-resultados tr:nth-child(even) {
+  background-color: #949393;
+}
+
+.tabla-resultados tr:hover {
+  background-color: #02aa26;
+}
+
+
+
+/* Contenedor principal de los filtros */
+.filtros-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /*separacion de secciones*/
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background: linear-gradient(135deg, #777777, #dedddd);
+  border-radius: 100px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+/* Contenedor principal de los filtros */
+.filtros-container2{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /*separacion de secciones*/
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background: linear-gradient(135deg, #ff0000, #ff0000, );
+  border-radius: 100px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+/* Estilo individual para filtros */
+.filtro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 300px;
+}
+
+/* Etiquetas de los filtros */
+.filtro-label {
+  font-size: 25px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Selectores de los filtros */
+.filtro-select {
+  width: 250px;
+  color: #555;
+  border-radius: 8px; 
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filtro-select:hover,
+.filtro-select:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+  outline: none;
+}
+
+/* Botón de filtro */
+.btn-filtrar {
+  padding: 15px 25px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #4caf50, #43a047);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-filtrar:hover {
+  background: linear-gradient(135deg, #43a047, #388e3c);
+  transform: scale(1.05);
+}
+
+.btn-filtrar:active {
+  background: linear-gradient(135deg, #388e3c, #2e7d32);
+  transform: scale(1);
+}
+
+

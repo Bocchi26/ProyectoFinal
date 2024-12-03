@@ -31,7 +31,7 @@ const BarraNavegacion = () => {
                         </NavLink> 
                 ))}
             </nav>
-           
+
         </div> 
     );
 };
