@@ -12,12 +12,9 @@ const Plantilla = ({ children }) => {
         <h2 id="texto-encabezado">GeoTech</h2>
 
       </header>
-      
-        {/* Barra de navegación */}
-        <BarraNavegacion />
-         {/* aqui va a ir como va a ser la plntilla */}
 
       <main className="contenidoPrincipal">
+      <BarraNavegacion />
         {children} {/* Contenido específico de cada página */}
         <footer id="Piedepagina">© 2024 Energías Renovables</footer>
       </main>
