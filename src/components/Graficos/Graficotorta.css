@@ -1,0 +1,41 @@
+
+/* Contenedor principal */
+#grafica-torta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  width: 90%; /* Ancho flexible */
+  max-width: 800px; /* Tamaño máximo */
+  padding: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background-color: #fff; /* Fondo blanco */
+}
+
+.recharts-wrapper {
+  width: 100%; /* Asegura que el gráfico se ajuste al contenedor */
+  height: 100%; /* Mantiene proporción */
+}
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 768px) {
+  #grafica-torta {
+    max-width: 90%; /* Reduce el tamaño del contenedor */
+  }
+
+  .recharts-wrapper {
+    height: 300px; /* Ajusta la altura del gráfico */
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 400px) {
+  #grafica-torta {
+    max-width: 100%; /* Ocupa todo el ancho disponible */
+  }
+
+  .recharts-wrapper {
+    height: 250px; /* Reduce la altura aún más */
+  }
+}

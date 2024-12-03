@@ -1,0 +1,66 @@
+#grafico-container-lineas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  width: 90%; /* Ancho flexible */
+  max-width: 800px; /* Tamaño máximo */
+  padding: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background-color: #fff; /* Fondo blanco */
+}
+
+#grafico-container-lineas h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Clase de ajuste para el gráfico de líneas */
+.recharts-wrapper {
+  width: 100%; /* Ajusta al ancho del contenedor */
+  height: 100%; /* Altura dinámica */
+}
+
+/* Estilos para pantallas medianas */
+@media (max-width: 768px) {
+  #grafico-container-lineas {
+    padding: 15px;
+  }
+
+  #grafico-container-lineas h1 {
+    font-size: 20px;
+  }
+
+  .recharts-wrapper {
+    height: 300px; /* Ajustar altura para pantallas medianas */
+  }
+
+  .recharts-cartesian-axis-tick {
+    font-size: 12px; /* Reducir tamaño de texto del eje */
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 400px) {
+  #grafico-container-lineas {
+    padding: 10px;
+  }
+
+  #grafico-container-lineas h1 {
+    font-size: 18px;
+  }
+
+  .recharts-wrapper {
+    height: 250px; /* Reducir altura en pantallas pequeñas */
+  }
+
+  .recharts-cartesian-axis-tick {
+    font-size: 10px; /* Texto más pequeño en ejes */
+  }
+
+  .recharts-legend-wrapper {
+    font-size: 12px; /* Reducir tamaño de la leyenda */
+  }
+}

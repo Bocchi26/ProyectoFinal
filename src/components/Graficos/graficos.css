@@ -1,0 +1,24 @@
+.graficos-horizontal {
+    display: flex; /* Usa Flexbox para organizar en fila */
+    justify-content: space-between; /* Espacio entre los gráficos */
+    align-items: center; /* Alinea verticalmente al centro */
+    width: 840px; /* Ancho total */
+    margin: 0 auto; /* Centra el contenedor */
+    gap: 15px; /* Espaciado entre los gráficos */
+  }
+  
+  .graficos-horizontal > * {
+    flex: 1; /* Cada gráfico ocupará la mitad del contenedor */
+    max-width: 50%; /* Limita cada uno al 50% del ancho del contenedor */
+  }
+  @media (max-width: 850px) {
+    .graficos-horizontal {
+      flex-direction: column; /* Cambia a disposición vertical en pantallas pequeñas */
+      width: 100%; /* Ocupa todo el ancho disponible */
+    }
+  
+    .graficos-horizontal > * {
+      max-width: 100%; /* Cada gráfico ocupa el ancho completo */
+    }
+  }
+    
