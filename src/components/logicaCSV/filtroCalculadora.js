@@ -51,7 +51,7 @@ useEffect(() => {
       return;
     }
 
-    const totalUsuarioTWh = (parseFloat(consumoUsuario) * Math.pow(10, -9)) / 12;
+    const totalUsuarioTWh = (parseFloat(consumoUsuario) * Math.pow(10, -9)) * 12;
 
     const energias = {
       "Geotérmica": "Geo Biomass Other - TWh",
