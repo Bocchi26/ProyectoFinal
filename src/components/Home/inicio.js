@@ -9,7 +9,7 @@ const Home = () => {
 
       <div className="links">
             <a href="#SubTitulo">¿Qué es?</a>
-            <a href="#subTitulo2">Beneficios</a>
+            <a href="#SubTitulo2">Beneficios</a>
             <a href="#titulosecciones">Aplicación</a>
         </div>
 
@@ -38,7 +38,7 @@ const Home = () => {
             
             <img id="imagen1" src="https://thumbs.dreamstime.com/b/concepto-de-la-energía-geotérmica-central-eléctrica-amistosa-generación-eco-104105147.jpg"></img>
              <div className="tercerinfo">
-                <h2 id="subTitulo2">Beneficios de la Energía Geotérmica</h2>
+                <h2 id="SubTitulo2">Beneficios de la Energía Geotérmica</h2>
                 <p id="tercerTexto">La energía geotérmica es una de las fuentes de energía renovable más sostenibles y menos contaminantes.
                   A continuación, te detallo sus beneficios más destacados:</p>
                   <ul className="naturalezarb">
