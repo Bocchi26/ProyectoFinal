@@ -4,6 +4,11 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    
+    }
+    h1 h2 {
+        font-family: 'Times New Roman', Times, serif;
     }
     /* styles.css */
     

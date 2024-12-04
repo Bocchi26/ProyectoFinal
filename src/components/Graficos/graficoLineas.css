@@ -4,7 +4,7 @@
   align-items: center;
   margin: 20px auto;
   width: 90%; /* Ancho flexible */
-  max-width: 800px; /* Tamaño máximo */
+  max-width: 1200px; /* Tamaño máximo */
   padding: 20px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
   border-radius: 10px;

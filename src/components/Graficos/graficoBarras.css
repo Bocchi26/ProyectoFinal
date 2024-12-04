@@ -11,6 +11,7 @@
   padding: 20px;
   background-color: #fff; /* Fondo blanco */
   transition: transform 0.3s ease;
+  text-align: center;
 }
 
 /* Estilos para pantallas medianas */

@@ -56,10 +56,12 @@ const GraficoBarrasCSV = () => {
 
   return (
     <article className="grafico-container">
+      <h1>Produccion de energia renovable<br></br>Colombia-2021</h1>
       {datosFiltrados.length === 0 ? (
         <p>No se encontraron datos para Colombia en 2021.</p>
       ) : (
-        <ResponsiveContainer width="100%" height={485}>
+      
+        <ResponsiveContainer width="100%" height={472}>
           <BarChart 
             data={datosParaGrafico}
             barCategoryGap="20%" // Separar las barras

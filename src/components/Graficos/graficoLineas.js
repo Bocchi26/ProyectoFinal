@@ -71,7 +71,7 @@ const GraficoLineasCSV = () => {
             <Legend />
             <Line type="monotone" dataKey="Bioenergia y otras (TWh)" stroke="#90ee90" />
             <Line type="monotone" dataKey="Energia Solar (TWh)" stroke="#FFD700" />
-            <Line type="monotone" dataKey="Energia Eólica (TWh)" stroke="#ff7300" />
+            <Line type="monotone" dataKey="Energia Eólica (TWh)" stroke="#d3d3d3" />
             <Line type="monotone" dataKey="Energia hidráulica (TWh)" stroke="#90ee90" />
           </LineChart>
         </ResponsiveContainer>

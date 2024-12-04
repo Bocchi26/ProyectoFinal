@@ -6,7 +6,7 @@ const GraficoTortaCSV = () => {
   const [datos, setDatos] = useState([]); // Estado para almacenar los datos procesados del CSV
 
   // Colores para las secciones del gráfico
-  const colores = ["#8884d8", "#8dd1e1", "#82ca9d", "#ffc658", "#ff8042", "#d0ed57"];
+  const colores = ["#90ee90", "#d3d3d3", "#FFD700", "#4682b4"]
 
   useEffect(() => {
     const cargarCSV = async () => {
@@ -49,10 +49,10 @@ const GraficoTortaCSV = () => {
   const datosGrafico = useMemo(() => {
     if (!datosColombia2021) return [];
     return [
-      { name: "Geo Biomass Other", value: parseFloat(datosColombia2021["Geo Biomass Other - TWh"]) || 0 },
-      { name: "Solar Generation", value: parseFloat(datosColombia2021["Solar Generation - TWh"]) || 0 },
-      { name: "Wind Generation", value: parseFloat(datosColombia2021["Wind Generation - TWh"]) || 0 },
-      { name: "Hydro Generation", value: parseFloat(datosColombia2021["Hydro Generation - TWh"]) || 0 },
+      { name: "Bioenergia y otras (TWh)", value: parseFloat(datosColombia2021["Geo Biomass Other - TWh"]) || 0 },
+      { name: "Energia Solar (TWh)", value: parseFloat(datosColombia2021["Solar Generation - TWh"]) || 0 },
+      { name: "Energia Eólica (TWh)", value: parseFloat(datosColombia2021["Wind Generation - TWh"]) || 0 },
+      { name: "Energia hidráulica (TWh)", value: parseFloat(datosColombia2021["Hydro Generation - TWh"]) || 0 },
     ];
   }, [datosColombia2021]);
 
@@ -62,6 +62,7 @@ const GraficoTortaCSV = () => {
     <p>No se encontraron datos para Colombia en 2021.</p>
   ) : (
     <>
+      <h1>Consumo de energia renovable<br></br>Colombia-2021</h1>
       <ResponsiveContainer width="100%" height={400}>
         <PieChart>
           <Pie

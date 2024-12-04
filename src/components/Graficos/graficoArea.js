@@ -3,28 +3,28 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend,PieChart,
 import Papa from "papaparse";
 import "./graficoArea.css"
 
-const RenewableEnergyChart = () => {
+const GraficoAreaCSV = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       // Cargar y procesar datos
-      const [consumptionData, productionData] = await Promise.all([
+      const [consumoDatos, produccionDatos] = await Promise.all([
         fetchCSV("/archivosCSV/02 modern-renewable-energy-consumption.csv"),
         fetchCSV("/archivosCSV/03 modern-renewable-prod.csv"),
       ]);
 
       // Filtrar y procesar datos
-      const processedData = processData(consumptionData, productionData);
-      setData(processedData);
+      const datosProcesados = datosProcesados(consumoDatos, produccionDatos);
+      setData(datosProcesados);
     };
 
     fetchData();
   }, []);
 
-  const fetchCSV = (filePath) => {
+  const fetchCSV = (rutaArchivo) => {
     return new Promise((resolve, reject) => {
-      Papa.parse(filePath, {
+      Papa.parse(rutaArchivo, {
         download: true,
         header: true,
         complete: (results) => resolve(results.data),
@@ -33,36 +33,36 @@ const RenewableEnergyChart = () => {
     });
   };
 
-  const processData = (consumptionData, productionData) => {
+  const datosProcesados = (datosConsumo, datosProduccion) => {
     const years = Array.from({ length: 2021 - 1965 + 1 }, (_, i) => 1965 + i);
 
     return years.map((year) => {
-      const consumptionYear = consumptionData.find((item) => item.Entity === "Colombia" && Number(item.Year) === year);
-      const productionYear = productionData.find((item) => item.Entity === "Colombia" && Number(item.Year) === year);
+      const consumoAño = datosConsumo.find((item) => item.Entity === "Colombia" && Number(item.Year) === year);
+      const producidoAño = datosProduccion.find((item) => item.Entity === "Colombia" && Number(item.Year) === year);
 
       // Sumar energías renovables para consumo
-      const renewableEnergyConsumption = consumptionYear
-        ? parseFloat(consumptionYear["Geo Biomass Other - TWh"] || 0) +
-          parseFloat(consumptionYear["Solar Generation - TWh"] || 0) +
-          parseFloat(consumptionYear["Wind Generation - TWh"] || 0) +
-          parseFloat(consumptionYear["Hydro Generation - TWh"] || 0)
+      const energiaRenovableConsumo = consumoAño
+        ? parseFloat(consumoAño["Geo Biomass Other - TWh"] || 0) +
+          parseFloat(consumoAño["Solar Generation - TWh"] || 0) +
+          parseFloat(consumoAño["Wind Generation - TWh"] || 0) +
+          parseFloat(consumoAño["Hydro Generation - TWh"] || 0)
         : 0;
 
       // Sumar energías renovables para producción
-      const renewableEnergyProduction = productionYear
-        ? parseFloat(productionYear["Electricity from wind (TWh)"] || 0) +
-          parseFloat(productionYear["Electricity from hydro (TWh)"] || 0) +
-          parseFloat(productionYear["Electricity from solar (TWh)"] || 0) +
-          parseFloat(productionYear["Other renewables including bioenergy (TWh)"] || 0)
+      const energiaRenovableProduccion = producidoAño
+        ? parseFloat(producidoAño["Electricity from wind (TWh)"] || 0) +
+          parseFloat(producidoAño["Electricity from hydro (TWh)"] || 0) +
+          parseFloat(producidoAño["Electricity from solar (TWh)"] || 0) +
+          parseFloat(producidoAño["Other renewables including bioenergy (TWh)"] || 0)
         : 0;
 
       // Depuración: imprimir datos sumados
-      console.log(`Año: ${year}, Consumo Total: ${renewableEnergyConsumption}, Producción Total: ${renewableEnergyProduction}`);
+      console.log(`Año: ${year}, Consumo Total: ${energiaRenovableConsumo}, Producción Total: ${energiaRenovableProduccion}`);
 
       return {
         year,
-        renewableEnergyConsumption,
-        renewableEnergyProduction,
+        renewableEnergyConsumption: energiaRenovableConsumo,
+        renewableEnergyProduction: energiaRenovableProduccion,
       };
     });
   };
@@ -105,4 +105,4 @@ const RenewableEnergyChart = () => {
   );
 };
 
-export default RenewableEnergyChart;
+export default GraficoAreaCSV;

@@ -9,8 +9,10 @@ import "./graficos.css"
 const Graficos = () => {
   return (
     <Plantilla>
-    <h1>Bienvenido a la Página de todas las tablas</h1>
-    <p>Este es el contenido único de la página tablas.</p>
+      <br></br><br></br><br></br><br></br><br></br>
+
+    <h1>Bienvenido a las Graficas</h1>
+  
     
     {/* Contenedor para gráficos torta y barras */}
     <div className="graficos-horizontal">
