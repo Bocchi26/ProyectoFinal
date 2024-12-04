@@ -8,12 +8,18 @@ import "./historia.css";
 const DatosHistoricos = () => {
   return (
     <Plantilla>
-      <h1 id="titulo1">ACA PODRAS VER EL CONSUMO, LA PRODUCCION Y LA CALCULADORA DE ENERGIA RENOVABLE</h1>  
+      <h1 id="titulo1">Datos Historicos</h1>  
+      <br></br>
+      <br></br>
       <h2 id="subTitulo1">CONSUMO DE ENERGIAS RENOVABLES</h2>
       <TabularConsumoCSV />
+      <br></br>
+      <br></br>
 
       <h2 id="subTitulo2">PRODUCCION DE ENERGIAS RENOVABLES</h2>
       <TabularProduccionCSV /> {/* Aquí usamos el componente correcto */}
+      <br></br>
+      <br></br>
       <CalculadoraRenovable/>
     </Plantilla>
   );

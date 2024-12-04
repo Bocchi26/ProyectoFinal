@@ -11,10 +11,17 @@
 
 /* Aquí estamos asegurando el espacio entre las tablas */
 #tabalPincipal {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 30px;
-  margin-bottom: 60px; /* Espacio debajo de la tabla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  width: 100%; /* Ancho flexible */
+  max-width: 1350px; /* Tamaño máximo */
+  padding: 20px;
+  box-shadow: 0px 10px 20px rgba(9, 255, 0, 0.5);
+  border-radius: 10px;
+  background-color: #fff; /* Fondo blanco */
+  text-align:center;
 
 }
 
@@ -232,7 +239,7 @@
   justify-content: center;
   align-items: center;
   padding: 5px;
-  background: linear-gradient(135deg, #ff0000, #ff0000, );
+  background: linear-gradient(135deg,  #dedddd, #777777 );
   border-radius: 100px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 50px;

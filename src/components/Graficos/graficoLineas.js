@@ -55,7 +55,7 @@ const GraficoLineasCSV = () => {
 
   return (
     <article id="grafico-container-lineas">
-      <h1>Producción de Energía Renovable en Colombia</h1>
+      <h1 className="titulos">Producción de Energía Renovable en Colombia</h1>
       {datosFiltrados.length === 0 ? (
         <p>No se encontraron datos para Colombia.</p>
       ) : (

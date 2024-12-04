@@ -1,4 +1,4 @@
-h1{ 
+.titulos  { 
   display: flex;
   flex-direction: column;
   align-items: center;

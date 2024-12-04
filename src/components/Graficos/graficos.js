@@ -11,7 +11,7 @@ const Graficos = () => {
     <Plantilla>
       <br></br><br></br><br></br><br></br><br></br>
 
-    <h1>Bienvenido a las Graficas</h1>
+    <h1 className="titulos" >Bienvenido a las Graficas</h1>
   
     
     {/* Contenedor para gráficos torta y barras */}

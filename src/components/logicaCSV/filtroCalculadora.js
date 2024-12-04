@@ -71,7 +71,7 @@ useEffect(() => {
       resultadosCalculo[nombre] = {
         totalTWh: totalEnergia,
         porcentaje: totalEnergia
-          ? ((totalUsuarioTWh * 100) / totalEnergia).toFixed(2)
+          ? ((totalUsuarioTWh * 100) / totalEnergia).toFixed(15)
           : 0,
       };
     });

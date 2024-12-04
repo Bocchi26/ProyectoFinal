@@ -62,7 +62,7 @@ const GraficoTortaCSV = () => {
     <p>No se encontraron datos para Colombia en 2021.</p>
   ) : (
     <>
-      <h1>Consumo de energia renovable<br></br>Colombia-2021</h1>
+      <h1 className="titulos">Consumo de energia renovable<br></br>Colombia-2021</h1>
       <ResponsiveContainer width="100%" height={400}>
         <PieChart>
           <Pie

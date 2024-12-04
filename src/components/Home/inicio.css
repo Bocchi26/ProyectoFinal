@@ -95,16 +95,7 @@ html {
   transform: scale(1.1); /* Aumenta el tamaño al 110% */
 }
 
-#subTitulo2{
-  font-family: 'Times New Roman', Times, serif;
-  text-align:justify;
-  color: black;
-  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);  /*Se le pone sombra gris al texto*/
-  font-size: 30px;
-  margin-top: 10px;
-  margin-left: -400px;
-  
-}
+
 
 #tercerTexto{
   text-align: justify;
