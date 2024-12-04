@@ -12,6 +12,28 @@ html {
 }
 
 
+.links {
+  position: fixed; /* Mantiene el navegador fijo en la pantalla */
+  top: 20px; /* Ubícalo en la parte superior */
+  right: 20px; /* Se alinea a la derecha */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  z-index: 1000; /* Asegúrate de que esté por encima del contenido */
+}
+
+.links a {
+  color: #ffffff; /* Mantén el color blanco */
+  text-decoration: none;
+  margin: 0 10px; /* Espaciado entre los enlaces */
+  font-size: 16px; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita para destacar */
+}
+
+.links a:hover {
+  color: #00bcd4; /* Cambia el color al pasar el cursor */
+  text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
 
 
 #Titulo{
@@ -80,7 +102,7 @@ html {
   text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);  /*Se le pone sombra gris al texto*/
   font-size: 30px;
   margin-top: 10px;
-  margin-left: 150px;
+  margin-left: -400px;
   
 }
 
@@ -135,12 +157,12 @@ section li:last-child {
 
 .secciones{
   margin-top: -150px;
-  border: 1px solid black;
+  
 }
 
 .segundaParte{
-  margin-top: 250px;
-  border: 1px solid black;
+  margin-top: 500px;
+  
 }
 
 .subpartedos{
@@ -202,27 +224,138 @@ section li:last-child {
 }
 
 
-/*
-#lista ul li{
-  
+/* Responsividad: max-width: 768px */
+@media (max-width: 768px) {
+  #Titulo {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  #SubTitulo{
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  #subTitulo2{
+    font-size: 1.8rem;
+    margin-left: 20px;
+  }
+
+  #titulosecciones {
+    font-size: 2rem;
+    margin-left: 80px;
+  }
+
+  #segundoTexto,
+  #tercerTexto,
+  #cuartotexto {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 15px;
+  }
+  #primerTexto{
+    font-size: 2rem;
+    line-height: 1.5;
+    padding: 0 15px;
+
+  }
+
+  ul.naturalezarb {
+    margin-left: 15px;
+    padding: 0 10px;
+  }
+
+  ul.naturalezarb li {
+    font-size: 1rem;
+  }
+
+  img#imagen1 {
+    width: 50%;
+    display: block;
+    margin: 20px auto;
+  }
+
+  .secciones ol {
+    margin-left: 15px;
+  }
+
+  .secciones ol h4 {
+    font-size: 1.3rem;
+    margin: 10px 0;
+  }
+  .segundaParte{
+    margin-top: 85vh;
+  }
+
 }
-*/
 
-
-
-
-
-
-
-
-/*Aquí se modifican las secciones de inicio----------------------------------------------------
-.Secciones{
-  display: flex;
-  
+@media (max-width: 1440px) {
+  .segundaParte{
+    margin-top: 100vh;
+  }
 }
 
-.Secciones2{
-  display: flex;
-}*
-*/
+/* Responsividad: max-width: 420px */
+@media (max-width: 420px) {
+  #Titulo {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  #subTitulo2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  #SubTitulo{
+    font-size: 1.5rem;
+    margin-left: 130px;
+  }
+
+  #titulosecciones {
+    font-size: 1.8rem;
+    margin-left: 5px;
+  }
+
+  #primerTexto,
+  #segundoTexto,
+  #tercerTexto,
+  #cuartotexto {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    padding: 0 10px;
+  }
+
+  ul.naturalezarb {
+    padding: 0 5px;
+  }
+
+  ul.naturalezarb li {
+    font-size: 0.9rem;
+  }
+
+  img#imagen1 {
+    width: 100%;
+    display: block;
+    margin: 20px auto;
+  }
+
+  .secciones ol {
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+
+  .secciones ol h4 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+  .segundaParte{
+    margin-top: 100vh;
+  }
+  .links a {
+    color: #ffffff; /* Mantén el color blanco */
+    text-decoration: none;
+    margin: 0 3px; /* Espaciado entre los enlaces */
+    font-size: 10px; /* Tamaño de fuente */
+    
+  }
+}
 
