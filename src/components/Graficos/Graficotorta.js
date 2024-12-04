@@ -55,53 +55,64 @@ const GraficoTortaCSV = () => {
       { name: "Energia hidráulica (TWh)", value: parseFloat(datosColombia2021["Hydro Generation - TWh"]) || 0 },
     ];
   }, [datosColombia2021]);
+    const total = datosGrafico.reduce((sum, entry) => sum + entry.value, 0);
+
 
   return (
-    <article id="grafica-torta">
-  {datosGrafico.length === 0 ? (
-    <p>No se encontraron datos para Colombia en 2021.</p>
-  ) : (
-    <>
-      <h1 className="titulos">Consumo de energia renovable<br></br>Colombia-2021</h1>
-      <ResponsiveContainer width="100%" height={400}>
-        <PieChart>
-          <Pie
-            data={datosGrafico}
-            dataKey="value"
-            nameKey="name"
-            cx="50%"
-            cy="50%"
-            outerRadius="70%"
-            fill="#8884d8"
-          >
-            {datosGrafico.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={colores[index % colores.length]}
-              />
-            ))}
-          </Pie>
-          <Tooltip />
-        </PieChart>
-      </ResponsiveContainer>
+          <article id="grafica-torta">
+        {datosGrafico.length === 0 ? (
+          <p>No se encontraron datos para Colombia en 2021.</p>
+        ) : (
+          <>
+            <h1 className="titulos">Consumo de energía renovable<br />Colombia-2021</h1>
+            <ResponsiveContainer width="100%" height={400}>
+              <PieChart>
+                <Pie
+                  data={datosGrafico}
+                  dataKey="value"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius="70%"
+                  fill="#8884d8"
+                  label
+                >
+                  {datosGrafico.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={colores[index % colores.length]}
+                    />
+                  ))}
+                </Pie>
+                <Tooltip
+                  formatter={(value) =>
+                    `${value.toFixed(2)} TWh (${((value / total) * 100).toFixed(2)}%)`
+                  }
+                />
+              </PieChart>
+            </ResponsiveContainer>
 
-      {/* Etiquetas por fuera */}
-      <div id="datos">
-        {datosGrafico.map((entry, index) => (
-          <div key={`label-${index}`} id="valores">
-            <div
-              className="color-indicador"
-              style={{ backgroundColor: colores[index % colores.length] }}
-            ></div>
-            <span className="dato-texto">
-              {entry.name}: <strong>{entry.value.toFixed(2)} TWh</strong>
-            </span>
-          </div>
-        ))}
-      </div>
-    </>
-  )}
-</article>
+            {/* Etiquetas por fuera */}
+            <div id="datos">
+              {datosGrafico.map((entry, index) => {
+                const porcentaje = ((entry.value / total) * 100).toFixed(2);
+                return (
+                  <div key={`label-${index}`} id="valores">
+                    <div
+                      className="color-indicador"
+                      style={{ backgroundColor: colores[index % colores.length] }}
+                    ></div>
+                    <span className="dato-texto">
+                      {entry.name}: <strong>{porcentaje}%</strong>
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        )}
+      </article>
+
 
   );
 };
