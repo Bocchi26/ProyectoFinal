@@ -67,7 +67,15 @@ html {
   margin-bottom: 40px;
   
 }
-
+#SubTitulo2{
+  font-family: 'Times New Roman', Times, serif;
+  text-align:justify;
+  color: black;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);  /*Se le pone sombra gris al texto*/
+  font-size: 30px;
+  margin-left: 400px;
+  margin-bottom: 40px;
+}
 #segundoTexto{
   text-align: justify;
   margin-top: 90px;
