@@ -7,6 +7,12 @@ const Home = () => {
     <Plantilla>
       <div className="contenedor-fondo">
 
+      <div className="links">
+            <a href="#SubTitulo">¿Qué es?</a>
+            <a href="#subTitulo2">Beneficios</a>
+            <a href="#titulosecciones">Aplicación</a>
+        </div>
+
         
 
         <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
